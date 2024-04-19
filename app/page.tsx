@@ -25,7 +25,7 @@ const Home: FC = () => {
     <>
     <main className="min-h-screen">
       <section id="apps" className="border-b-2 pb-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Apps I've Built</h2>
+        <h2 className="text-xl font-bold p-4 pb-0">Apps I&apos;ve Built</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           {apps.map((app, index) => (
             <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-64">
@@ -45,7 +45,7 @@ const Home: FC = () => {
         </div>
       </section>
       <section id="music" className="mt-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Music I've Recorded</h2>
+        <h2 className="text-xl font-bold p-4 pb-0">Music I&apos;ve Recorded</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           <iframe
             className="h-96 scroll-mx-4 flex-shrink-1 max-w-xl rounded-xl shadow"
