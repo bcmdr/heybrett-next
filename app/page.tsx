@@ -60,7 +60,7 @@ const Home: FC = () => {
         </div>
       </section>
     </main>
-    <footer className="text-xs p-2 text-left m-2"><span className="bg-black text-white p-2 rounded">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
+    <footer className="text-xs p-2 text-left m-2 mb-4"><span className="bg-black text-white p-2 rounded-md">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
     </>
   );
 };
