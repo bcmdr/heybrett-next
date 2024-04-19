@@ -25,7 +25,7 @@ const Home: FC = () => {
     <>
     <main className="min-h-screen">
       <section id="apps" className="border-b-2 pb-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Apps</h2>
+        <h2 className="text-xl font-bold p-4 pb-0">Apps I've Built</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           {apps.map((app, index) => (
             <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-64">
@@ -45,10 +45,10 @@ const Home: FC = () => {
         </div>
       </section>
       <section id="music" className="mt-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Music</h2>
+        <h2 className="text-xl font-bold p-4 pb-0">Music I've Recorded</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           <iframe
-            className="h-96 scroll-mx-4 flex-shrink-1 max-w-xl"
+            className="h-96 scroll-mx-4 flex-shrink-1 max-w-xl rounded-xl shadow"
             src="https://open.spotify.com/embed/album/3S8kMvO9dOWUY7LBkQCblG?utm_source=generator"
             width="100%"
             height="100%"
@@ -56,11 +56,11 @@ const Home: FC = () => {
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
-          <iframe className="h-96 flex-shrink-1 max-w-xl" width="100%" height="100%" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe>
+          <iframe className="h-96 flex-shrink-1 max-w-xl rounded-xl shadow" width="100%" height="100%" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe>
         </div>
       </section>
     </main>
-    <footer className="text-sm p-2 text-right">© 2024 Brett Commandeur. Some Rights Reserved.</footer>
+    <footer className="text-xs p-2 text-left m-2"><span className="bg-black text-white p-2 rounded">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
     </>
   );
 };
