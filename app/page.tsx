@@ -44,7 +44,7 @@ const Home: FC = () => {
           ))}
         </div>
       </section>
-      <section id="music" className="mt-2">
+      <section id="music" className="mt-2 border-b-2 pb-2">
         <h2 className="text-xl font-bold p-4 pb-0">Music I&apos;ve Recorded</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           <iframe
@@ -60,7 +60,7 @@ const Home: FC = () => {
         </div>
       </section>
     </main>
-    <footer className="text-xs p-2 text-left m-2 mb-4"><span className="bg-black text-white p-2 rounded-md">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
+    <footer className="text-xs text-left mt-6 mb-6 text-center"><span className="bg-black text-white p-2 rounded-md">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
     </>
   );
 };
