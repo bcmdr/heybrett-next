@@ -22,46 +22,43 @@ const Home: FC = () => {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-left justify-between p-4">
-      <section><h2 className="text-xl font-bold pb-4">Apps</h2>
-        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-4">
+    <main className="flex min-h-screen flex-col items-start">
+      <section id="apps" className="border-b-2">
+        <h2 className="text-xl font-bold p-4 pb-0">Apps</h2>
+        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
           {apps.map((app, index) => (
-            <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-full md:max-w-64 lg:max-w-96">
+            <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-64">
               <a href={app.url} className="block">
                 <Image
                   src={`/images/screenshots/${app.filename}`}
                   alt={`Screenshot of ${app.name}`}
-                  className={`object-fit snap-center rounded-xl shadow`}
-                  width={750}  // Placeholder, adjust based on actual image aspect ratio
-                  height={1336}  // Placeholder, adjust based on actual image aspect ratio
+                  className={`snap-center rounded-xl shadow max-h-96 object-cover object-top`}
+                  width={750}
+                  height={1336}
                   priority={app.id === 1}
                 />
                 <p className="text-lg font-bold mt-2 text-center">{app.name}</p>
               </a>
-              {/* <div className="flex justify-between items-center">
-              <button
-                className="button-class"
-                onClick={() => {
-                  const newId = app.id - 1 === 0 ? 1 : app.id - 1;
-                  document.querySelector(`#app-${newId}`).scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                &larr;
-              </button>
-              <button
-                className="button-class"
-                onClick={() => {
-                  const newId = app.id + 1 > apps.length ? 1 : app.id + 1;
-                  document.querySelector(`#app-${newId}`).scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                &rarr;
-              </button>
-            </div> */}
             </div>
           ))}
         </div>
       </section>
+      <section id="music" className="mt-4">
+        <h2 className="text-xl font-bold p-4 pb-0">Music</h2>
+        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
+          <iframe
+            className="h-96 scroll-mx-4 flex-shrink-1"
+            src="https://open.spotify.com/embed/album/3S8kMvO9dOWUY7LBkQCblG?utm_source=generator"
+            width="100%"
+            height="100%"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+          <iframe className="h-96 flex-shrink-0" width="100%" height="100%" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe>
+        </div>
+      </section>
+
     </main>
   );
 };
