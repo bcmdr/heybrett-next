@@ -21,14 +21,12 @@ const Home: FC = () => {
     // Add more apps as needed
   ];
 
-  const refsArray: Ref = apps.map(() => createRef());
-
   return (
     <main className="flex min-h-screen flex-col items-left justify-between p-4">
       <section><h2 className="text-xl font-bold pb-4">Apps</h2>
         <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto pb-4">
           {apps.map((app, index) => (
-            <div id={`app-${app.id}`} ref={refsArray[index]?.current} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-full md:max-w-64 lg:max-w-96">
+            <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-full md:max-w-64 lg:max-w-96">
               <a href={app.url} className="block">
                 <Image
                   src={`/images/screenshots/${app.filename}`}
