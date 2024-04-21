@@ -12,3 +12,11 @@ html, body {
 /* img {
   object-fit: cover;
 } */
+
+.category-heading {
+  @apply bg-white text-black text-2xl font-bold p-3 pt-5 pl-5 shadow-inner;
+}
+
+.category-items {
+  @apply relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4 pb-10;
+}

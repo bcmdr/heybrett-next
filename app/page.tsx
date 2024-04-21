@@ -1,6 +1,7 @@
 import { FC, createRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SoundCloudFrame from './components/SoundCloudFrame';
 
 // Define the shape of an app item
 interface AppItem {
@@ -8,6 +9,14 @@ interface AppItem {
   id: number;
   filename: string;  // This is the name of the image file in your directory
   url: string;
+}
+
+interface MusicItem {
+  name: string;
+  id: number;
+  date: number; // Date.now() of release day. 
+  url: string;
+  embed: string,
 }
 
 const Home: FC = () => {
@@ -21,12 +30,17 @@ const Home: FC = () => {
     // Add more apps as needed
   ];
 
+  const music: MusicItem[] = [
+    {name: "Fragments", id: 1, date: 1713657663388, url: "https://soundcloud.com/bcmdr/sets/fragments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1812765684&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"},
+    {name: "Experiments", id: 2, date: 1713053224087, url: "https://soundcloud.com/bcmdr/sets/experiments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" }
+  ]
+
   return (
     <>
     <main className="min-h-screen">
-      <section id="apps" className="border-b-2 pb-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Apps I&apos;ve Built</h2>
-        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
+      <section id="apps" className="shadow">
+        <h2 className="category-heading">Apps</h2>
+        <div className="category-items">
           {apps.map((app, index) => (
             <div id={`app-${app.id}`} key={app.id} className="flex-shrink-0 scroll-mx-4 max-w-64">
               <a href={app.url} className="block">
@@ -34,8 +48,8 @@ const Home: FC = () => {
                   src={`/images/screenshots/${app.filename}`}
                   alt={`Screenshot of ${app.name}`}
                   className={`snap-center rounded-xl shadow max-h-96 object-cover object-top`}
-                  width={750}
-                  height={1336}
+                  width={530}
+                  height={945}
                   priority={app.id === 1}
                 />
                 <p className="text-lg font-bold mt-2 text-center">{app.name}</p>
@@ -44,23 +58,16 @@ const Home: FC = () => {
           ))}
         </div>
       </section>
-      <section id="music" className="mt-2 border-b-2 pb-2">
-        <h2 className="text-xl font-bold p-4 pb-0">Music I&apos;ve Recorded</h2>
-        <div className="relative w-full flex gap-6 snap-x snap-mandatory overflow-x-auto p-4">
-          <iframe
-            className="h-96 scroll-mx-4 flex-shrink-1 max-w-xl rounded-xl shadow"
-            src="https://open.spotify.com/embed/album/3S8kMvO9dOWUY7LBkQCblG?utm_source=generator"
-            width="100%"
-            height="100%"
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-          <iframe className="h-96 flex-shrink-1 max-w-xl rounded-xl shadow" width="100%" height="100%" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe>
+      <section id="music" className="">
+        <h2 className="category-heading">Music</h2>
+        <div className="category-items">
+        {music.map((item, index) => (
+          <SoundCloudFrame key={item.id} embed={item.embed}></SoundCloudFrame>
+        ))}
         </div>
       </section>
     </main>
-    <footer className="text-xs text-left mt-6 mb-6 text-center"><span className="bg-black text-white p-2 rounded-md">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
+    <footer className="bg-black text-xs text-center p-2"><span className="text-white 2">© 2024 Brett Commandeur. Some Rights Reserved.</span></footer>
     </>
   );
 };

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "./components/Header";
 
 export const metadata: Metadata = {
-  title: "Hey Brett",
+  title: "Brett Commandeur | Projects",
   description: "A Collection of Creative Endeavours",
   icons: {
     icon: "/icon.svg"
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          <Header></Header>
+          {children}
+        </body>
       </html>
   );
 }
