@@ -31,8 +31,9 @@ const Home: FC = () => {
   ];
 
   const music: MusicItem[] = [
-    {name: "Fragments", id: 1, date: 1713657663388, url: "https://soundcloud.com/bcmdr/sets/fragments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1812765684&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"},
-    {name: "Experiments", id: 2, date: 1713053224087, url: "https://soundcloud.com/bcmdr/sets/experiments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" }
+    {name: "Sequences", id: 1, date: 1746145730388, url:"https://soundcloud.com/bcmdr/sets/sequences", embed:"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2007036048&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false" },
+    {name: "Fragments", id: 2, date: 1713657663388, url: "https://soundcloud.com/bcmdr/sets/fragments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1812765684&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"},
+    {name: "Experiments", id: 3, date: 1713053224087, url: "https://soundcloud.com/bcmdr/sets/experiments", embed: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1811953023&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" } 
   ]
 
   return (
