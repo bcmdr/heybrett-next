@@ -63,7 +63,7 @@ const Home: FC = () => {
         <h2 className="category-heading">Music</h2>
         <div className="category-items">
         {music.map((item, index) => (
-          <SoundCloudFrame id={`music-${app.id}`} className="flex-shrink-0 scroll-mx-4 max-w-64" key={item.id} embed={item.embed}></SoundCloudFrame>
+          <SoundCloudFrame id={`music-${item.id}`} className="flex-shrink-0 scroll-mx-4 max-w-64" key={item.id} embed={item.embed}></SoundCloudFrame>
         ))}
         </div>
       </section>
